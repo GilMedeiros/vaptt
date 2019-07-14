@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "997523136785-v7j4so78fr9bqr6p8rdjt9tctp1cmej3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.gilmedeiros.vapt",
+            "certificate_hash": "611e55092abe6f85e2874e44fe66c5850f11c6ab"
+          }
+        },
+        {
           "client_id": "997523136785-olk2ubispou8afugkadhgnforg4m5t0r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

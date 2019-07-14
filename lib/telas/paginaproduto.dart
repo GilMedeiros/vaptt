@@ -138,62 +138,69 @@ class _PaginaProdutoState extends State<PaginaProduto> {
                                   blurRadius: 3)
                             ]),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            GestureDetector(
-                              onTap: () {
-                                print("teste2");
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.all(8),
-                                  alignment: Alignment.center,
-                                  width: 170,
-                                  height: 55,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
+                              Flexible(
+                                fit: FlexFit.loose,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print("teste2");
+                                  },
+                                  child: Container(
+                                      margin: EdgeInsets.all(8),
+                                      alignment: Alignment.center,
+                                      width: 170,
+                                      height: 55,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                           BorderRadius.all(Radius.circular(8)),
-                                      color: Color.fromARGB(255, 255, 76, 0)),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        "Pôr no carrinho",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Icon(Icons.shopping_cart),
-                                    ],
-                                  )),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print("teste");
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.all(8),
-                                  alignment: Alignment.center,
-                                  width: 170,
-                                  height: 55,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
+                                          color: Color.fromARGB(255, 255, 76, 0)),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Text(
+                                            "Pôr no carrinho",
+                                            style: TextStyle(fontSize: 20),
+                                          ),
+                                          SizedBox(
+                                            width: 1,
+                                          ),
+                                          Icon(Icons.shopping_cart),
+                                        ],
+                                      )),
+                                ),
+                              ),
+                              Flexible(
+                                fit: FlexFit.loose,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    print("teste");
+                                  },
+                                  child: Container(
+                                      margin: EdgeInsets.all(8),
+                                      alignment: Alignment.center,
+                                      width: 170,
+                                      height: 55,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                           BorderRadius.all(Radius.circular(8)),
-                                      color: Color.fromARGB(255, 255, 76, 0)),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Text(
-                                        "Pôr na lista \nde desejos",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Icon(Icons.favorite),
-                                    ],
-                                  )),
-                            )
+                                          color: Color.fromARGB(255, 255, 76, 0)),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Text(
+                                            "Pôr na lista \nde desejos",
+                                            style: TextStyle(fontSize: 20),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Icon(Icons.favorite),
+                                        ],
+                                      )),
+                                )
+                              ),
                           ],
                         ),
                       ),
@@ -213,19 +220,21 @@ class _PaginaProdutoState extends State<PaginaProduto> {
                           color: Color.fromARGB(255, 255, 103, 38),
                         ),
                         child: Row(
+
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             Container(
                               margin:
-                                  EdgeInsets.only(top: 8, left: 16, bottom: 8),
+                                  EdgeInsets.only(top: 8, bottom: 8),
                               width: 100,
                               height: 100,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color.fromARGB(255, 50, 50, 50)),
                             ),
-                            SizedBox(
-                              width: 30,
-                            ),
+//                            SizedBox(
+//                              width: 30,
+//                            ),
                             Text(
                               "5,6km",
                               style: TextStyle(
@@ -233,9 +242,9 @@ class _PaginaProdutoState extends State<PaginaProduto> {
                                   fontWeight: FontWeight.w500,
                                   color: Color.fromARGB(255, 50, 50, 50)),
                             ),
-                            SizedBox(
-                              width: 30,
-                            ),
+//                            SizedBox(
+//                              width: 30,
+//                            ),
                             Text(
                               "50min",
                               style: TextStyle(
@@ -243,9 +252,9 @@ class _PaginaProdutoState extends State<PaginaProduto> {
                                   fontWeight: FontWeight.w300,
                                   color: Color.fromARGB(255, 50, 50, 50)),
                             ),
-                            SizedBox(
-                              width: 30,
-                            ),
+//                            SizedBox(
+//                              width: 30,
+//                            ),
                             Icon(
                               Icons.star,
                               color: Colors.yellowAccent,

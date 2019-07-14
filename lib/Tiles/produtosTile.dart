@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vapt/datas/produtosdata.dart';
-import 'package:carousel_pro/carousel_pro.dart';
+
 import 'package:vapt/telas/paginaproduto.dart';
 class ProdutoTile extends StatelessWidget {
 

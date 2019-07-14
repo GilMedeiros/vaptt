@@ -6,7 +6,7 @@ class DrawerTile extends StatelessWidget {
   final String text;
   final PageController controller;
   final int page;
-  final CorLetra = Colors.black;
+  final corLetra = Colors.black;
   DrawerTile(this.text, this.controller, this.page);
 
   @override

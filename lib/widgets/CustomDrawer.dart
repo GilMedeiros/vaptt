@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:vapt/Tiles/DrawerTile.dart';
+import 'package:vapt/models/user_model.dart';
+import 'package:vapt/paginas_login_cadastro/login_page_ATIVA.dart';
 
 class CustomDrawer extends StatelessWidget {
 
@@ -63,31 +66,41 @@ class CustomDrawer extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.only(left: 26),
-                                child: Text("Olá, USER",style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                    fontSize: 19,
-                                    color: Color.fromARGB(255, 255, 76, 0),
-                                ),
-                                ),
-                              ),
-                              SizedBox(height:9 ,),
-                              Padding(
-                                padding: EdgeInsets.only(left: 26),
-                                child: Text("Como posso te ajudar ?",style: TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14,
-                                  color: Color.fromARGB(255, 255, 76, 0),
-                                ),
-                                ),
-                              ),
-                            ],
-                          )
+                            ScopedModelDescendant<UserModel>(builder: (context,child,model){
+                              return Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 12),
+                                      child: Text("Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}",style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 17,
+                                        color: Color.fromARGB(255, 255, 76, 0),
+                                        ),
+                                      ),
+
+                                    ),
+                                    SizedBox(height:9,),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 12),
+                                      child: GestureDetector(
+                                        child: Text(!model.isLoggedIn() ? "Entre ou cadastre-se" : "Sair",style: TextStyle(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 14,
+                                          color: Color.fromARGB(255, 255, 76, 0),
+                                        ),
+                                        ),
+                                        onTap: (){
+                                          if(!model.isLoggedIn())
+                                            Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Login_Page_Ativa()));
+                                          else model.SingOut();
+                                        },
+                                      ),
+                                    )
+                                  ]
+                              );
+                            },)
                         ],
                       ),
                     )
